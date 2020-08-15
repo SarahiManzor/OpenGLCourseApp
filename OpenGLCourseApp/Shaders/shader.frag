@@ -141,8 +141,6 @@ vec4 CalcSpotLight(SpotLight sLight)
 	{
 		vec4 colour = CalcPointLight(sLight.base);
 
-
-
 		return colour * (1.0f - (1.0f - slFactor) * (1.0f/(1.0f - sLight.edge)));
 	}
 
@@ -162,5 +160,9 @@ vec4 CalcSpotLights()
 
 void main()
 {
-	colour = vec4(1.0, 1.0, 1.0, 1.0);
+	vec4 finalColour = CalcDirectionalLight();
+	finalColour += CalcPointLights();
+	finalColour += CalcSpotLights();
+
+	colour = texture(theTexture, texCoord) * finalColour;
 }

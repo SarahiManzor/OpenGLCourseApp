@@ -15,8 +15,8 @@ Light::Light(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLflo
 
 	diffuseIntensity = dInstensity;
 
-	shadowMap = new ShadowMap();
-	shadowMap->Init(shadowWidth, shadowHeight);
+	//shadowMap = new ShadowMap();
+	//shadowMap->Init(shadowWidth, shadowHeight);
 }
 
 void Light::UseLight(GLuint ambientIntensityLocation, GLuint colourLocation, GLuint diffuseIntensityLocation)

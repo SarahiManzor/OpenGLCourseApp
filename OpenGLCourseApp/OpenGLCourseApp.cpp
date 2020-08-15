@@ -254,9 +254,9 @@ void RenderPass(glm::mat4 projectionMatrix)
 	shaderList[0]->SetSpotLights(spotLights, spotLightCount);
 	shaderList[0]->SetDirectionalLightTransform(&mainLight->CalculateLightTransform());
 
-	mainLight->GetShadowMap()->Read(GL_TEXTURE1);
-	shaderList[0]->SetTexture(0);
-	shaderList[0]->SetDirectionalShadowMap(1);
+	//mainLight->GetShadowMap()->Read(GL_TEXTURE1);
+	//shaderList[0]->SetTexture(0);
+	//shaderList[0]->SetDirectionalShadowMap(1);
 
 	RenderScene();
 }
@@ -286,18 +286,18 @@ int main()
 
 	mainLight = new DirectionalLight(1.0f, 1.0f, 1.0f, 0.2f, 0.3f, 2.0f, -1.0f, -2.0f, 1024, 1024);
 
-	pointLights[0] = PointLight(0.0f, 1.0f, 0.0f, 1.0f, 1.0f, -40.0f, 10.0f, 0.0f, 0.01f, 0.02f, 0.03f);
-	pointLightCount++;
-	pointLights[1] = PointLight(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 40.0f, 10.0f, 0.0f, 0.01f, 0.02f, 0.03f);
-	pointLightCount++;
-	pointLights[2] = PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 10.0f, -40.0f, 0.01f, 0.02f, 0.03f);
-	pointLightCount++;
+	//pointLights[0] = PointLight(0.0f, 1.0f, 0.0f, 1.0f, 1.0f, -40.0f, 10.0f, 0.0f, 0.01f, 0.02f, 0.03f);
+	//pointLightCount++;
+	//pointLights[1] = PointLight(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 40.0f, 10.0f, 0.0f, 0.01f, 0.02f, 0.03f);
+	//pointLightCount++;
+	//pointLights[2] = PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 10.0f, -40.0f, 0.01f, 0.02f, 0.03f);
+	//pointLightCount++;
 
-	spotLights[0] = SpotLight(1.0f, 1.0f, 1.0f, 0.4f, 0.4f, 0.0f, 10.0f, 40.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 20.0f);
-	spotLightCount++;
+	//spotLights[0] = SpotLight(1.0f, 1.0f, 1.0f, 0.4f, 0.4f, 0.0f, 10.0f, 40.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 20.0f);
+	//spotLightCount++;
 
-	spotLights[1] = SpotLight(1.0f, 1.0f, 1.0f, 0.4f, 0.4f, 0.0f, 10.0f, 40.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 20.0f);
-	spotLightCount++;
+	//spotLights[1] = SpotLight(1.0f, 1.0f, 1.0f, 0.4f, 0.4f, 0.0f, 10.0f, 40.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 20.0f);
+	//spotLightCount++;
 
 	glm::mat4 projection = glm::perspective(45.0f, (GLfloat)MainWindow->GetBufferWidth() / (GLfloat)MainWindow->GetBufferHeight(), 0.1f, 300.0f);
 
